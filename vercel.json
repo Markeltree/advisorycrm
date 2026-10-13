@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "crm-backend": {
+      "root": "crm-backend",
+      "framework": "express",
+      "entrypoint": "src/server.js"
+    },
+    "crm-frontend": {
+      "root": "crm-frontend",
+      "framework": "vite",
+      "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": { "service": "crm-backend" } },
+    { "source": "/(.*)", "destination": { "service": "crm-frontend" } }
+  ]
+}
