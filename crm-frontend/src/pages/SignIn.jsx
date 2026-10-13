@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import {
   Layers,
   Lock,
@@ -57,7 +57,7 @@ export default function SignIn() {
         {/* Subtle background glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-zinc-800/60 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
 
-        <div className="relative z-10 flex items-center gap-3">
+        <Link to="/" className="relative z-10 flex items-center gap-3 w-fit">
           <div className="w-9 h-9 rounded-xl bg-white text-zinc-950 flex items-center justify-center shadow-md">
             <Layers className="w-5 h-5" />
           </div>
@@ -65,7 +65,7 @@ export default function SignIn() {
             <span className="font-bold text-base tracking-tight">Advisory CRM</span>
             <span className="block text-[11px] text-zinc-400">Client Lifecycle Automation</span>
           </div>
-        </div>
+        </Link>
 
         <div className="relative z-10 max-w-lg space-y-6">
           <h1 className="text-3xl font-extrabold tracking-tight leading-tight text-zinc-50">
@@ -98,12 +98,12 @@ export default function SignIn() {
       <div className="flex items-center justify-center p-6 sm:p-12">
         <div className="w-full max-w-md space-y-8">
           {/* Mobile brand header */}
-          <div className="lg:hidden flex items-center gap-2.5 mb-6">
+          <Link to="/" className="lg:hidden flex items-center gap-2.5 mb-6 w-fit">
             <div className="w-8 h-8 rounded-lg bg-zinc-900 text-white flex items-center justify-center">
               <Layers className="w-4 h-4" />
             </div>
             <span className="font-bold text-sm tracking-tight text-zinc-900 dark:text-zinc-100">Advisory CRM</span>
-          </div>
+          </Link>
 
           <div className="space-y-2">
             <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">

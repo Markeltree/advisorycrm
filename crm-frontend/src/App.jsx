@@ -2,6 +2,7 @@ import { Navigate, Route, Routes, Link, useLocation } from 'react-router-dom';
 import { HelpCircle, ArrowLeft } from 'lucide-react';
 import Layout from './components/Layout.jsx';
 import { isSignedIn } from './lib/session.js';
+import Landing from './pages/Landing.jsx';
 import SignIn from './pages/SignIn.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Pipeline from './pages/Pipeline.jsx';
@@ -15,6 +16,8 @@ import Workflows from './pages/Workflows.jsx';
 function RequireSession({ children }) {
   const location = useLocation();
   if (!isSignedIn()) {
+    // Visitors who are not signed in see the marketing page at the root.
+    if (location.pathname === '/') return <Landing />;
     return <Navigate to="/signin" replace state={{ from: location.pathname }} />;
   }
   return children;
