@@ -1,0 +1,38 @@
+{
+  "name": "crm-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node.js + Supabase API for the Advisory CRM",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed-mongo.js",
+    "create-user": "node scripts/create-user-mongo.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.3",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "jose": "^6.2.12",
+    "mongoose": "^9.11.2",
+    "pg": "^8.23.1",
+    "pino": "^10.4.0",
+    "pino-http": "^11.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
+    "supertest": "^7.3.1",
+    "vitest": "^5.0.4"
+  }
+}
