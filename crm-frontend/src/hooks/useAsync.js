@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-// Runs an async loader when `deps` change. Returns { status, data, error, reload, setData }.
+// Runs an asynsssssssc loader when `deps` change. Returns { status, data, error, reload, setData }.
 export function useAsync(loader, deps = []) {
   const [state, setState] = useState({ status: 'loading', data: null, error: null });
   const [version, setVersion] = useState(0);
