@@ -43,6 +43,9 @@ export function loadConfig(env = process.env) {
   return {
     ...c,
     isProduction: c.NODE_ENV === 'production',
-    corsOrigins: c.CORS_ORIGINS.split(',').map((s) => s.trim()).filter(Boolean),
+    // Browsers send Origin without a trailing slash; tolerate quotes/slashes pasted into the env value.
+    corsOrigins: c.CORS_ORIGINS.split(',')
+      .map((s) => s.trim().replace(/^["']|["']$/g, '').replace(/\/+$/, ''))
+      .filter(Boolean),
   };
 }
